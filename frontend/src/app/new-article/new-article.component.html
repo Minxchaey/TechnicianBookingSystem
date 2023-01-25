@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+  <div class="mb-3">
+    <label for="costumername" class="form-label">Name</label>
+    <input type="text" class="form-control" #costumerName>
+  </div>
+
+  <div class="mb-3">
+    <label for="costumeremail" class="form-label">Email</label>
+    <input type="text" class="form-control" #costumerEmail>
+  </div>
+
+  <div class="mb-3">
+    <label for="costumeraddress" class="form-label">Address</label>
+    <input type="text" class="form-control" #costumerAddress>
+  </div>
+
+  <div class="mb-3">
+    <label for="costumerpassword" class="form-label">Password</label>
+    <input type="password" class="form-control" #costumerPassword>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-success" (click)="add(costumerName.value, costumerEmail.value, costumerAddress.value, costumerPassword.value);costumerName.value = '';
+     costumerEmail.value = ''; costumerAddress.value = '';costumerPassword.value = '';">Add</button>
+  </div>
+
+
+</div>

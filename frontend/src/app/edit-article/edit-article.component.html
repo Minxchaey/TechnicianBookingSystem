@@ -1,0 +1,28 @@
+<br>
+<div class="container">
+  <div class="mb-3">
+    <label for="costumername" class="form-label">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.name" #costumerName>
+  </div>
+
+  <div class="mb-3">
+    <label for="costumeremail" class="form-label">Email</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.email" #costumerEmail>
+  </div>
+
+  <div class="mb-3">
+    <label for="costumeraddress" class="form-label">Address</label>
+    <input type="text" class="form-control" [(ngModel)]="customer.address" #costumerAddress>
+  </div>
+
+  <div class="mb-3">
+    <label for="costumerpassword" class="form-label">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="customer.password" #costumerPassword>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-success"
+      (click)="update(costumerName.value, costumerEmail.value, costumerAddress.value, costumerPassword.value);">Update</button>
+  </div>
+
+</div>

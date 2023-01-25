@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<div class="first_div">
+
+    <div class="background_image">
+        <div style="z-index: 2;position: relative;left: 50px;top:230px">
+            <h1 style="color: white;">Apply here the details <br>that you want to achieve.</h1>
+            <p style="color: white;"> Gain customer experience by upgrading your field and communicate to different customers.</p>
+            <!-- <button type="button" class="btn btn-primary ">Contact Customers</button>&nbsp;
+            <button type="button" class="btn btn-primary ">Enhance your Field</button> -->
+        </div>
+        <div class="user_exp_bg"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between" style="border-bottom:2px solid black;padding-bottom:10px">
+        <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px;">
+            <img src="../../assets/images/options.png" id="sched_image" alt="time" srcset="">
+            <h5>Your Category Field</h5>
+          </div>
+        <button type="button" class="btn btn-primary ">Add Category</button> 
+    </div>
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+</div>
+<div class="container">
+    <h1>Customers</h1>
+    <br>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+        </thead>
+        <tbody *ngIf="customers.length">
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.address}}</td>
+                <td><button class="btn btn-info" routerLink="/edit/{{customer.id}}">Edit</button>&nbsp;<button
+                        class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary" routerLink="/add">Add New Customer</button>
+</div>
+<app-footer></app-footer>

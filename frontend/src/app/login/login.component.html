@@ -1,0 +1,46 @@
+<body>
+  <div class="main">
+    <div class="d-flex align-items-center">
+      <img src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
+        alt="logo" id="logo" />
+      <h4 id="logo-txt" routerLink="/">TechBook</h4>
+    </div>
+  </div>
+  <br><br><br><br><br>
+
+    <br><br><br><br><br><br><br><br><br>
+    <form [formGroup]="form" (submit)="submit()">
+
+        <p>Login Form</p>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <br>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email: </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1"
+                        placeholder="Enter Email" formControlName="email">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password: </label>
+                    <input type="password" class="form-control" id="exampleInputEmail1"
+                        placeholder="Enter Password" formControlName="password">
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <h6>Don't have an account? <a id="reg" routerLink="/register">Click to register</a></h6>
+
+            <div class="col-md-3">
+            </div>
+        </div>
+        <br>
+    </form>
+
+    <div class="bg"></div>
+</body>
+

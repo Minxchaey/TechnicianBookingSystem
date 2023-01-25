@@ -1,0 +1,45 @@
+.main{
+  background-color:aquamarine ;
+  padding: 14px 30px 10px 30px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 90;
+}
+#logo{
+  width: 40px;
+}
+#logo-txt {
+  position: relative;
+  top: 3px;
+  left:5px;
+  cursor:pointer;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  top:6px;
+  cursor: pointer;
+}
+ul li {
+  list-style-type: none;
+  cursor: pointer;
+  transition: all;
+}
+ul li:hover {
+  text-decoration: underline;
+  color:rgba(0, 0, 0, 0.689);
+}
+
+#userlogo{
+  width: 40px;
+  position: relative;
+  top:-1px;
+}
+

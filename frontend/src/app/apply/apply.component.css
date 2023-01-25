@@ -1,0 +1,31 @@
+.first_div {
+    background:rgba(127, 255, 212, 0.3);
+    padding: 70px 90px 70px 90px;
+    
+}
+/* <img src="https://hvacrcareerconnectny.com/wp-content/uploads/2019/11/HVACR_111419_BlogPost.png"> */
+.first_div .background_image {
+    width: 100%;
+    height: 400px;
+    position:relative;
+    
+    background-image: url('https://hvacrcareerconnectny.com/wp-content/uploads/2019/11/HVACR_111419_BlogPost.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.user_exp_bg{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.593);
+    z-index: 1;
+}
+
+.container {
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+#sched_image{
+    width: 40px;
+  }
