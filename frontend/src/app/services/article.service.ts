@@ -34,6 +34,10 @@ export class ArticleService {
   deleteCustomer(id : any): Observable<any>{
     return this.http.delete<any>(this.url+ `/api/customer/`+ id, this.httpOptions);
   }
+
+  login(credentials:any): Observable<any>{
+    return this.http.post(this.url+ `/api/login`,credentials, this.httpOptions);
+  }
 }
 
 

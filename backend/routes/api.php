@@ -17,8 +17,8 @@ use Illuminate\Http\Request;
 |
  */
 
-Route::post("register", [TechnicianAccountController::class, 'store']);
-// Route::get("customer", [CustomerAccountController::class, 'index']);
+Route::post("/register", [TechnicianAccountController::class, 'store']);
+Route::get("customer", [CustomerAccountController::class, 'index']);
 
 // // Route::middleware('auth:sanctum')->group(function () {
 // // Route::apiResource('customer', CustomerAccountController::class);
@@ -37,4 +37,5 @@ Route::post("register", [TechnicianAccountController::class, 'store']);
 Route::middleware(['auth:sanctum', 'email_verified'])->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('login', [AuthController::class, "loginTechnicianAcc"]);
+// Route::middleware(['cors'])->post('login', [AuthController::class, "loginTechnicianAcc"]);
+Route::post('/login', [AuthController::class, "loginTechnicianAcc"]);

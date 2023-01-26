@@ -6,13 +6,16 @@
 |--------------------------------------------------------------------------
 |
 | The first thing we will do is create a new Laravel application instance
-| which serves as the "glue" for all the components of Laravel, and is
+| which serves as the 'glue' for all the components of Laravel, and is
 | the IoC container for the system binding all of the various parts.
 |
 */
+header( 'Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE' );
+header( 'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, Authorization' );
+header( 'Access-Control-Allow-Origin: *' );
 
 $app = new Illuminate\Foundation\Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
+    $_ENV[ 'APP_BASE_PATH' ] ?? dirname( __DIR__ )
 );
 
 /*

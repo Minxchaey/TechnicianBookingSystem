@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function loginTechnicianAcc(Request $request){
-        dd($request->all());
+        // dd($request->all());
         $validateData = $request->validate([
             'email' => 'required|email',
             'password'=> 'required'
         ]);
 
-        $customer = TechnicianAccount::where('email', $validateData['email'])->first();
+        $tech = TechnicianAccount::where('email', $validateData['email'])->first();
 
-        if($customer && Hash::check($validateData['password'],$customer->password)){
-            $token = $customer->createToken('api',['create']);
+        if($tech && Hash::check($validateData['password'],$tech->password)){
+            $token = $tech->createToken('api',['create']);
 
             return[
                 'token' => $token->plainTextToken

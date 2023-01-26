@@ -19,7 +19,7 @@
       </div>
       <div class="inputfield form-group">
         <label>Age</label>
-        <input type="text" class="input" formControlName="age">
+        <input type="number" class="input" formControlName="age" >
       </div>
       <div class="inputfield">
         <label>Birthdate</label>
@@ -82,7 +82,7 @@
       </div>
       <div class="inputfield">
         <input type="back" value="Return" class="btn" routerLink="/login">
-        <input type="submit" value="Register" class="btn" >
+        <input type="submit" value="Register" class="btn" [disabled]="!form.valid && (pass != cpass)">
       </div>
     </form>
   </div>

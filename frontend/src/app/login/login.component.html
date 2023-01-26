@@ -9,7 +9,7 @@
   <br><br><br><br><br>
 
     <br><br><br><br><br><br><br><br><br>
-    <form [formGroup]="form" (submit)="submit()">
+    <form>
 
         <p>Login Form</p>
         <div class="row">
@@ -20,18 +20,18 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email: </label>
                     <input type="email" class="form-control" id="exampleInputEmail1"
-                        placeholder="Enter Email" formControlName="email">
+                        placeholder="Enter Email"  #email>
                 </div>
                 <br>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Password: </label>
-                    <input type="password" class="form-control" id="exampleInputEmail1"
-                        placeholder="Enter Password" formControlName="password">
+                    <input type="password" class="form-control"
+                        placeholder="Enter Password" #password>
                 </div>
 
                 <br>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary" (click)="submit(email.value, password.value)">Login</button>
             </div>
             <h6>Don't have an account? <a id="reg" routerLink="/register">Click to register</a></h6>
 
