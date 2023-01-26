@@ -19,6 +19,21 @@ import { CustomerRegisterComponent } from './customer-register/customer-register
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SettingsTechnicianComponent } from './settings-technician/settings-technician.component';
 import { RequestTechnicianComponent } from './request-technician/request-technician.component';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 
 @NgModule({
@@ -46,6 +61,21 @@ import { RequestTechnicianComponent } from './request-technician/request-technic
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MdbCheckboxModule,
+    MdbAccordionModule,
+    MdbCarouselModule,
+    MdbCollapseModule,
+    MdbDropdownModule,
+    MdbFormsModule,
+    MdbModalModule,
+    MdbPopoverModule,
+    MdbRadioModule,
+    MdbRangeModule,
+    MdbRippleModule,
+    MdbScrollspyModule,
+    MdbTabsModule,
+    MdbTooltipModule,
+    MdbValidationModule,
 
   ],
   providers: [],
