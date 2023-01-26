@@ -1,0 +1,73 @@
+<body>
+  <div class="main">
+    <div class="d-flex align-items-center">
+      <img src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
+        alt="logo" id="logo" />
+      <h4 id="logo-txt" routerLink="/">TechBook</h4>
+    </div>
+  </div>
+  <br><br><br><br><br>
+  <div class="wrapper">
+    <div class="title">
+      Registration Form
+    </div>
+    <form [formGroup]="form" (submit)="submit()" class="form">
+
+      <div class="inputfield form-group">
+        <label>Full Name</label>
+        <input type="text" class="input" formControlName="name">
+      </div>
+      <div class="inputfield form-group">
+        <label>Age</label>
+        <input type="number" class="input" formControlName="age" >
+      </div>
+      <div class="inputfield">
+        <label>Birthdate</label>
+        <input type="date" class="input" formControlName="birthdate">
+      </div>
+      <div class="inputfield">
+        <label>Gender</label>
+        <div class="custom_select">
+          <select  formControlName="gender">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inputfield">
+        <label>Email Address</label>
+        <input type="text" class="input" formControlName="email">
+      </div>
+      <div class="inputfield">
+        <label>Phone Number</label>
+        <input type="text" class="input" formControlName="phone">
+      </div>
+      <div class="inputfield">
+        <label>Address</label>
+        <textarea class="textarea" formControlName="address"></textarea>
+      </div>
+      <div class="inputfield">
+        <label>Password</label>
+        <input type="password" class="input"formControlName="password">
+      </div>
+      <div class="inputfield">
+        <label>Confirm Password</label>
+        <input type="password" class="input" formControlName="password_confirmation">
+      </div>
+      <div class="inputfield terms">
+        <label class="check">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <p>Agreed to terms and conditions</p>
+      </div>
+      <div class="inputfield">
+        <input type="back" value="Return" class="btn" routerLink="/login">
+        <input type="submit" value="Register" class="btn" [disabled]="!form.valid && (pass != cpass)">
+      </div>
+    </form>
+  </div>
+  <div class="bg"></div>
+</body>

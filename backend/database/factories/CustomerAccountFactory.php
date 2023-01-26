@@ -18,12 +18,24 @@ class CustomerAccountFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'email'=>$this->faker->safeEmail,
-            'password'=>$this->faker->sha1,
-            'address'=>$this->faker->address,
+            'gender' => $this->gender(),
+            'birthdate' => $this->faker->dateTimeThisCentury->format('Y-m-d'),
+            'age' => $this->faker->numberBetween($min = 18, $max = 90),
+            'address' => $this->faker->address,
+            'phone' => $this->faker->phoneNumber,
+            'email' => $this->faker->safeEmail,
+            'type'=> 'customer',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+
+
             'email_verified_at' => now(),
             // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ];
+    }
+
+    private function gender(){
+        $array = ['male', 'female'];
+        return $array[$this->faker->numberBetween($min = 0, $max = count($array) - 1)];
     }
 }

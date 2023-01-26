@@ -1,0 +1,67 @@
+<body>
+  <nav>
+    <div class="d-flex align-items-center">
+      <img
+        src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
+        alt="logo"
+        id="logo"
+      />
+      <h4 id="logo-txt" routerLink="/">TechBook</h4>
+    </div>
+    <!-- toggle menu button -->
+    <span class="menubtn" onclick="openNav()">&#9776;</span>
+
+    <div class="navLinks">
+      <ul>
+
+        <li><a routerLink="/about-us">About</a></li>
+        <div class="dropdown">
+        <li><button class="dropbtn" style="color: white;">SignUp</button></li>
+          <div class="dropdown-content">
+            <a routerLink="/register/1">As Technician</a>
+            <a routerLink="/register/2">As Customer</a>
+          </div>
+        </div>
+        <li><a routerLink="/login">Login</a></li>
+
+
+      </ul>
+    </div>
+  </nav>
+    <!-- responsive side navbar -->
+    <div class="sideNav" id="sidenav">
+      <a href="#" class="closeBtn" onclick="closeNav()"> &#10006;</a>
+      <button class="dropbtn" style="color: white;">SignUp</button>
+          <div class="dropdown-content">
+            <a href="#">As Technician</a>
+            <a href="#">As Customer</a>
+          </div>
+      <a href="#">About</a>
+      <a href="#">Sign Up</a>
+      <a href="#" routerLink="/login">Login</a>
+
+    </div>
+
+    <!-- Header content with banner image -->
+    <div class="row">
+      <div class="column1">
+        <br><br>
+        <h1><span style="color: #004242; ">Looking for home Repair and Services technician?</span><br>
+           Worry no more! <br> We would love to serve you.</h1>
+      </div>
+      <div class="column2">
+        <img [src]="ImagePath" alt="banner" width="500px">
+      </div>
+    </div>
+
+    <!-- javascript to make side menu appear -->
+  <script>
+    function openNav() {
+      document.getElementById("sidenav").style.width = "50%";
+    }
+    function closeNav() {
+      document.getElementById("sidenav").style.width = "0%";
+    }
+  </script>
+
+ </body>

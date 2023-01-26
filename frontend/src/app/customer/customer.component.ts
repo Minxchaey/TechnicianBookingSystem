@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.css']
 })
-export class HomeComponent implements OnInit {
+export class CustomerComponent implements OnInit {
   user: any;
   loggedIn = false
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router :Router) {
 
   }
   ngOnInit() {
@@ -32,11 +32,11 @@ export class HomeComponent implements OnInit {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
 
-    this.http.post('http://localhost:8000/api/technician/logout', { headers: headers });
+    this.http.post('http://localhost:8000/api/customer/logout', { headers: headers });
     localStorage.removeItem('token');
-    localStorage.removeItem('pass');
     this.router.navigate(['/']);
-
-
   }
+
+
+
 }

@@ -13,10 +13,16 @@ class CustomerAccount extends Model
 
     protected $fillable = [
         'name',
+        'gender',
+        'birthdate',
+        'age',
+        'address',
+        'phone',
         'email',
         'password',
-        'address',
-        'place_id'
+        'type',
+        'email_verified_at',
+        'remember_token'
     ];
     protected $hidden = [
         'remember_token',

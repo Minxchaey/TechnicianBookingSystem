@@ -32,32 +32,32 @@ class AuthController extends Controller
     }
 
 
-    // public function loginOwnerAcc(Request $request){
+    public function loginCustomerAcc(Request $request){
 
-    //     $validateData = $request->validate([
-    //         'email' => 'required|email',
-    //         'password'=> 'required'
-    //     ]);
+        $validateData = $request->validate([
+            'email' => 'required|email',
+            'password'=> 'required'
+        ]);
 
-    //     $owner = OwnerAccount::where('email', $validateData['email'])->first();
+        $owner = CustomerAccount::where('email', $validateData['email'])->first();
 
-    //     if($owner && Hash::check($validateData['password'],$owner->password)){
-    //         $token = $owner->createToken('api',['create']);
+        if($owner && Hash::check($validateData['password'],$owner->password)){
+            $token = $owner->createToken('api',['create']);
 
-    //         return[
-    //             'token' => $token->plainTextToken
-    //         ];
-    //     }else{
-    //         return[
-    //             'error'=> "Invalid Credentials"
-    //         ];
-    //     }
-    // }
+            return[
+                'token' => $token->plainTextToken
+            ];
+        }else{
+            return[
+                'error'=> "Invalid Credentials"
+            ];
+        }
+    }
 
     public function logoutCustomerAcc(Request $request){
-        $request->user()->currentAccessToken()->delete();
+        $request->user()->tokens()->delete();
     }
-    // public function logoutOwnerAcc(Request $request){
-    //     $request->user()->currentAccessToken()->delete();
-    // }
+    public function logoutTechnicianAcc(Request $request){
+        $request->user()->tokens()->delete();
+    }
 }

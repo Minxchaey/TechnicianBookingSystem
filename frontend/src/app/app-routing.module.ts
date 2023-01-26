@@ -7,28 +7,57 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ApplyComponent } from './apply/apply.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerRegisterComponent } from './customer-register/customer-register.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { SettingsTechnicianComponent } from './settings-technician/settings-technician.component';
+import { RequestTechnicianComponent } from './request-technician/request-technician.component';
+
+
 
 const routes: Routes = [
   {
-    path : 'add',component : NewArticleComponent
+    path: 'add', component: NewArticleComponent
   },
   {
-    path : 'register',component : RegisterComponent
+    path: '', component: LandingPageComponent
   },
   {
-    path : 'login',component : LoginComponent
+    path: 'login', component: LoginComponent
   },
   {
-    path : 'edit/:customerId',component : EditArticleComponent
+    path: 'register/1', component: RegisterComponent
   },
   {
-    path : 'apply', component: ApplyComponent
+    path: 'register/2', component: CustomerRegisterComponent
   },
   {
-    path : 'transactions', component: ArticlesComponent
+    path: 'edit/:customerId', component: EditArticleComponent
   },
   {
-    path : '', component: HomeComponent
+    path: 'apply', component: ApplyComponent
+  },
+  {
+    path: 'transactions', component: ArticlesComponent
+  },
+  {
+    path: 'home/1', component: HomeComponent
+  },
+  {
+    path: 'home/2', component: CustomerComponent
+  },
+  {
+    path: 'about-us', component: AboutUsComponent
+  },
+  {
+    path: 'settings/1', component: SettingsTechnicianComponent
+
+  }
+  ,
+  {
+    path: 'request/1', component: RequestTechnicianComponent
+
   }
 ];
 

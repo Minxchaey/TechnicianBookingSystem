@@ -16,9 +16,14 @@ return new class extends Migration
         Schema::create('customer_accounts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('gender');
+            $table->string('birthdate');
+            $table->integer('age');
+            $table->string('address');
+            $table->string('phone');
             $table->string('email');
             $table->string('password');
-            $table->string('address');
+            $table->string('type');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

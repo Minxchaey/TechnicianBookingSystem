@@ -1,3 +1,4 @@
+
 <div class="main">
   <div class="d-flex align-items-center">
     <img
@@ -5,7 +6,7 @@
       alt="logo"
       id="logo"
     />
-    <h4 id="logo-txt" routerLink="/">TechBook</h4>
+    <h4 id="logo-txt" routerLink="/home/1">TechBook</h4>
   </div>
 
     <form class="form-inline d-flex gap-1">
@@ -16,9 +17,10 @@
   <div class="d-flex align-items-center gap-3">
     <ul>
       <li routerLink="/apply">Apply</li>
-      <li>Request</li>
+      <li routerLink="/request/1">Request</li>
       <li routerLink="/transactions">Transactions</li>
-      <li>Settings</li>
+      <li routerLink="/settings/1">Settings</li>
+      <i class="fa-solid fa-bell"></i>
     </ul>
     <button class="btn" routerLink="/login" *ngIf="loggedIn" (click)="logOut()">LOGOUT</button>
   </div>

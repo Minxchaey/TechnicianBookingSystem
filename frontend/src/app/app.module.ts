@@ -13,6 +13,12 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ApplyComponent } from './apply/apply.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerRegisterComponent } from './customer-register/customer-register.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { SettingsTechnicianComponent } from './settings-technician/settings-technician.component';
+import { RequestTechnicianComponent } from './request-technician/request-technician.component';
 
 
 @NgModule({
@@ -26,7 +32,13 @@ import { ApplyComponent } from './apply/apply.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    ApplyComponent
+    ApplyComponent,
+    LandingPageComponent,
+    CustomerComponent,
+    CustomerRegisterComponent,
+    AboutUsComponent,
+    SettingsTechnicianComponent,
+    RequestTechnicianComponent
   ],
   imports: [
     BrowserModule,

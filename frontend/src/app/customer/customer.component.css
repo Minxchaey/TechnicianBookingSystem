@@ -26,7 +26,7 @@ background:rgba(127, 255, 212, 0.089);
 width: 40px;
 }
 input{
-  border: solid 1px #004242;
+  border: solid 2px #004242;
 }
 .btn{
   background-color: #004242;
@@ -45,7 +45,7 @@ ul li:hover{
 .sched{
   width: 62%;
   background-color: white;
-  /* box-shadow: -2px 1px 5px 3px #004242; */
+  box-shadow: -1px 1px 2px 3px #004242;
 
 }
 .list{

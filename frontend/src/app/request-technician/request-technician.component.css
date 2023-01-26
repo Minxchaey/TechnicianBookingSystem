@@ -1,0 +1,8 @@
+body{
+  padding-top:80px;
+}
+
+.list-group li:hover {
+  background-color: rgba(0, 0, 0, 0.053);
+  cursor: pointer;
+}

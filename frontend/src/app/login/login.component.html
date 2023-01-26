@@ -9,36 +9,27 @@
   <br><br><br><br><br>
 
     <br><br><br><br><br><br><br><br><br>
-    <form>
-
-        <p>Login Form</p>
-        <div class="row">
-            <div class="col-md-3">
+    <form >
+      <div class="container">
+        <div class="wrapper">
+          <div class="title"><span>Login Form</span></div>
+          <form action="#">
+            <div class="row">
+              <i class="fas fa-user"></i>
+              <input type="text" class="form-control" placeholder="Enter Email" required #email >
             </div>
-            <div class="col-md-6">
-                <br>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email: </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1"
-                        placeholder="Enter Email"  #email>
-                </div>
-                <br>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Password: </label>
-                    <input type="password" class="form-control"
-                        placeholder="Enter Password" #password>
-                </div>
-
-                <br>
-                <button type="submit" class="btn btn-primary" (click)="submit(email.value, password.value)">Login</button>
+            <div class="row">
+              <i class="fas fa-lock"></i>
+              <input type="password" class="form-control" placeholder="Password" required #password >
             </div>
-            <h6>Don't have an account? <a id="reg" routerLink="/register">Click to register</a></h6>
-
-            <div class="col-md-3">
+            <div class="pass"><a href="#">Forgot password?</a></div>
+            <div class="row button">
+              <input type="submit" value="Login" (click)="submit(email.value, password.value)">
             </div>
+            <div class="signup-link" style="color:black">Not a member? <a href="" routerLink="/">Signup now</a></div>
+          </form>
         </div>
-        <br>
+      </div>
     </form>
 
     <div class="bg"></div>

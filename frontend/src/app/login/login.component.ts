@@ -14,6 +14,7 @@ import { ArticleService } from '../services/article.service';
 export class LoginComponent implements OnInit {
 
   form!: FormGroup;
+  pass!: string;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private articleService: ArticleService) {
   }
@@ -37,29 +38,39 @@ export class LoginComponent implements OnInit {
       'email': email,
       'password': password
     };
+    this.pass = password;
 
 
-    // return this.http.post<any>(this.url+ `/api/customer`,customer, this.httpOptions);
-
-
-
-    // this.http.post<any>('http://localhost:8000/api/login', this.credentials,this.httpOptions).subscribe(
-    //   (result: any) => {
-    //     localStorage.setItem('token', result.token);
-    //     console.log(localStorage.getItem('token'));
-    //     this.router.navigate(['/']);
-    //   },
-    //   error => {
-    //     console.log('error');
-    //     console.log(error);
-    //   }
-    // );
-
-    this.articleService.login(this.credentials as any).subscribe(
+    this.articleService.login1(this.credentials as any).subscribe(
       (result: any) => {
-        localStorage.setItem('token', result.token);
-        console.log(localStorage.getItem('token'));
-        this.router.navigate(['/']);
+        if (result.token != null) {
+          localStorage.setItem('token', result.token);
+          console.log(localStorage.getItem('token'));
+          this.router.navigate(['/home/2']);
+        } else {
+          this.articleService.login2(this.credentials as any).subscribe(
+            (result: any) => {
+              if (result.token != null) {
+                localStorage.setItem('token', result.token);
+                localStorage.setItem('pass', this.pass);
+                console.log(localStorage.getItem('token'));
+                this.router.navigate(['/home/1']);
+
+              } else {
+                console.log('no account');
+              }
+
+
+            },
+            error => {
+              console.log('error');
+              console.log(error);
+            }
+          );
+
+
+        }
+
       },
       error => {
         console.log('error');

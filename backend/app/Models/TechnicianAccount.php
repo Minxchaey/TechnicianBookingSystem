@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class TechnicianAccount extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
-    
+
     protected $fillable = [
         'name',
         'gender',
@@ -22,8 +22,11 @@ class TechnicianAccount extends Model
         'email',
         'valid_id',
         'category',
-        'password'
-       
+        'password',
+        'type',
+        'email_verified_at',
+        'remember_token'
+
     ];
     protected $hidden = [
         'remember_token',

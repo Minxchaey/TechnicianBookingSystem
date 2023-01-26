@@ -11,6 +11,7 @@ export class EditArticleComponent implements OnInit {
 
   customerId: any;
   customer :any;
+  
   constructor(private route: ActivatedRoute, private router: Router, private articleService: ArticleService) {}
 
   ngOnInit(): void {
@@ -18,7 +19,7 @@ export class EditArticleComponent implements OnInit {
     this.customerId = Number(routeParams.get('customerId'));
     this.articleService.find(this.customerId).subscribe((data:any) => {
       this.customer = data;
-      
+
       console.log(this.customer);
     });
 

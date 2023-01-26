@@ -38,16 +38,27 @@ class CustomerAccountController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'gender' => 'required',
+            'birthdate' => 'required',
+            'age' => 'required',
             'address' => 'required',
-            'password' => 'required'
+            'phone' => 'required',
+            'email' => 'required|email|unique:customer_accounts,email',
+            'password' => 'required|confirmed|min:6'
         ]);
         return CustomerAccount::create([
             'name'=> $validated['name'],
-            'email'=> $validated['email'],
+            'gender' => $validated['gender'],
+            'birthdate' => $validated['birthdate'],
+            'age' => $validated['age'],
             'address'=> $validated['address'],
+            'phone'=> $validated['phone'],
+            'email'=> $validated['email'],
             'password'=>Hash::make($validated['password']),
-
+            'type'=> 'customer',
+            'email_verified_at' => now(),
+            // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
         ]);
     }
 
@@ -91,7 +102,12 @@ class CustomerAccountController extends Controller
             'name'=> $request->name,
             'email'=> $request->email,
             'address'=> $request->address,
-            'password'=>Hash::make($request->password)
+            'gender'=>$request->gender,
+            'age'=> $request->age,
+            'birthdate'=>$request->birthdate,
+            'phone'=>$request->phone,
+            'password'=>Hash::make($request->password),
+
 
         ]);
     }

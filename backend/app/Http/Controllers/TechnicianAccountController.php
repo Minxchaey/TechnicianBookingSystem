@@ -63,6 +63,7 @@ class TechnicianAccountController extends Controller
             'valid_id'=> $validated['valid_id'],
             'category'=> $validated['category'],
             'password'=>Hash::make($validated['password']),
+            'type'=> 'technician',
             'email_verified_at' => now(),
             // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
@@ -110,6 +111,12 @@ class TechnicianAccountController extends Controller
             'name'=> $request->name,
             'email'=> $request->email,
             'address'=> $request->address,
+            'gender'=>$request->gender,
+            'age'=> $request->age,
+            'birthdate'=>$request->birthdate,
+            'phone'=>$request->phone,
+            'valid_id'=>$request->valid_id,
+            'category'=>$request->category,
             'password'=>Hash::make($request->password),
 
         ]);

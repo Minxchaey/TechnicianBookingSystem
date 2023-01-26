@@ -1,17 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-customer-register',
+  templateUrl: './customer-register.component.html',
+  styleUrls: ['./customer-register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class CustomerRegisterComponent {
   form!: FormGroup;
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
 
@@ -27,8 +24,6 @@ export class RegisterComponent implements OnInit {
       email: ['', Validators.required, Validators.email],
       phone: ['', Validators.required, Validators.minLength(11), Validators.maxLength(11)],
       address: ['', Validators.required],
-      category: ['', Validators.required],
-      valid_id: ['', Validators.required],
       password: ['', Validators.required],
       password_confirmation: ['', Validators.required]
     },
@@ -68,15 +63,13 @@ export class RegisterComponent implements OnInit {
       email: formData['email'].value,
       phone: formData['phone'].value,
       address: formData['address'].value,
-      category: formData['category'].value,
-      valid_id: formData['valid_id'].value,
       password: formData['password'].value,
       password_confirmation: formData['password_confirmation'].value,
 
 
     }
     // console.log(data);
-    return this.http.post('http://localhost:8000/api/register/technician', data, this.httpOptions)
+    return this.http.post('http://localhost:8000/api/register/customer', data, this.httpOptions)
       .subscribe(
         () => {
           this.router.navigate(['/login'])

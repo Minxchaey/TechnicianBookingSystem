@@ -1,0 +1,195 @@
+<body>
+  <app-navbar></app-navbar>
+  <div class="container" style="padding-top: 100px;">
+    <h1 class="h3 mb-3">Settings</h1>
+    <div class="row">
+      <div class="col-md-5 col-xl-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Profile Settings</h5>
+          </div>
+          <div class="list-group list-group-flush" role="tablist">
+            <a class="list-group-item list-group-item-action active" data-toggle="list" role="tab"
+              (click)="changePage(1)">
+              Account
+            </a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" role="tab" (click)="changePage(2)">
+              Password
+            </a>
+
+
+
+            <a class="list-group-item list-group-item-action" data-toggle="list" role="tab" (click)="changePage(3)">
+              Delete account
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-xl-8">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="account" role="tabpanel" #account>
+
+            <div class="card">
+              <div class="card-header">
+
+                <h5 class="card-title mb-0" style="font-weight: bold;">Account info</h5>
+                <br>
+                <div class="alert alert-success" role="alert">
+                  <p class="mb-0">Below shows your profile information. You can manage and update your information below. </p>
+                </div>
+              </div>
+
+              <br>
+              <div class="card-body">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputFirstName" style="font-weight: bold;">Name</label>
+                      <input type="text" class="form-control" id="inputFirstName" value="{{ user.name }}">
+                    </div>
+                    <br>
+                    <div class="form-group col-md-4 d-flex align-items-center gap-3">
+                      <label for="inputLastName" style="font-weight: bold;">Gender</label>
+
+                      <select id="inputState" class="form-control" (ngModelChange)="user.gender">
+                        <option value="">Change</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                      <input type="text" class="form-control" value="{{ user.gender }}" disabled>
+
+                    </div>
+                  </div>
+                  <br>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4" style="font-weight: bold;">Birth Date</label>
+                    <input type="text" class="form-control" id="inputBirthdate" value="{{ user.birthdate }}">
+                  </div>
+                  <br>
+                  <div class="form-group col-md-2">
+                    <label for="inputAddress" style="font-weight: bold;">Age</label>
+                    <input type="text" class="form-control" id="inputAge" value="{{ user.age }}">
+                  </div>
+                  <br>
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress2" style="font-weight: bold;">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" value="{{ user.address }}">
+                  </div>
+                  <br>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity" style="font-weight: bold;">Phone</label>
+                      <input type="text" class="form-control" id="inputPhone" value="{{ user.phone }}">
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                      <label for="inputState" style="font-weight: bold;">Email</label>
+                      <input type="text" class="form-control" id="inputEmail" value="{{ user.email }}">
+
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                      <label for="inputState" style="font-weight: bold;">Valid ID</label>
+                      <div class="">
+                        <input type="file" class="form-control" id="inputValidID">
+                        <small style="position: relative;top: 8px;font-size: 12px;font-weight: bold;"
+                          id="validIDText">{{
+                          user.valid_id }}</small>
+
+                      </div>
+
+
+                    </div>
+                    <br>
+                    <div class="form-group col-md-12">
+
+                      <label for="inputZip" style="font-weight: bold;">Category</label>
+                      <div class="form-group col-md-6 d-flex align-items-center gap-3">
+
+                        <select id="inputState" class="form-control" (ngModelChange)="user.gender">
+                          <option value="">Change Category...</option>
+                          <option value="electrician">Electrical Service Technician</option>
+                          <option value="computer-technician">Computer Technician</option>
+                          <option value="it-technician">IT Technician</option>
+                          <option value="automotive">Automotive Technician</option>
+                        </select>
+                        <input type="text" class="form-control" id="input" value="{{ user.category }}" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="password" role="tabpanel" #password>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Password</h5>
+                <br>
+                <div class="alert alert-warning" role="alert">
+                  <p class="mb-0">You can manage and update your password access key below. </p>
+                </div>
+                <form>
+                  <div class="form-group col-md-6 ">
+                    <label for="inputPasswordCurrent">Current password</label>
+                    <input type="password" class="form-control" id="inputPasswordCurrent" value="{{ passkey }}"
+                      disabled>
+
+                  </div>
+                  <br>
+                  <div class="form-group col-md-6 ">
+                    <label for="inputPasswordCon">Confirm password</label>
+                    <input type="password" class="form-control" id="inputPasswordCon">
+                  </div>
+                  <br>
+                  <div class="form-group  col-md-6 ">
+                    <label for="inputPasswordNew">New password</label>
+                    <input type="password" class="form-control" id="inputPasswordNew">
+                  </div>
+                  <br>
+                  <div class="form-group  col-md-6 ">
+                    <label for="inputPasswordNew2">Verify password</label>
+                    <input type="password" class="form-control" id="inputPasswordNew2">
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="password" role="tabpanel" #removeaccount>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">Remove Account</h5>
+                <br>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>Warning!</strong> This page may remove your account and you don't have access anymore. Please be guided before you proceed.
+
+                </div>
+                <br>
+                <div class="jumbotron">
+                  <hr class="my-4">
+                  <p>Once you delete your account, there is no turning back. You have possible accept the consequences.</p>
+                  <p class="lead">
+                    <a class="btn btn-danger btn" role="button">Remove Account</a>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <app-footer></app-footer>
+</body>

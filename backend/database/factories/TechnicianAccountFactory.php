@@ -29,6 +29,7 @@ class TechnicianAccountFactory extends Factory
             'valid_id' => $this->faker->image($dir = null, $width = 640, $height = 480),
             'category' => $this->category(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+            'type'=> 'technician',
 
 
             'email_verified_at' => now(),
