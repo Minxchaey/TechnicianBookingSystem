@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,24 +9,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 </head>
-<app-navbar></app-navbar>
-<body>
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" style="font-weight: bold;">Today</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link">Yesterday</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link">Pasts</a>
-    </li>
 
-  </ul>
+<body>
+  <app-navbar></app-navbar>
+
+  <!-- <mdb-tabs>
+    <mdb-tab title="Today" ></mdb-tab>
+    <mdb-tab title="Yesterday"></mdb-tab>
+    <mdb-tab title="Pasts"></mdb-tab>
+  </mdb-tabs> -->
   <div class="container">
     <h2>Requests</h2>
     <hr>
@@ -35,27 +31,27 @@
         <ul class="list-group" style="width: 500px;">
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Cras justo odio
-            <span class="badge badge-primary badge-pill">1</span>
+            <span class="badge badge-dark " style="color:black">1</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Dapibus ac facilisis in
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-dark " style="color:black">2</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Morbi leo risus
-            <span class="badge badge-primary badge-pill">3</span>
+            <span class="badge badge-dark " style="color:black">3</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Cras justo odio
-            <span class="badge badge-primary badge-pill">1</span>
+            <span class="badge badge-dark " style="color:black"`>1</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Dapibus ac facilisis in
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-dark " style="color:black"`>2</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Morbi leo risus
-            <span class="badge badge-primary badge-pill">3</span>
+            <span class="badge badge-dark " style="color:black"`>3</span>
           </li>
         </ul>
         <nav aria-label="...">
@@ -84,6 +80,7 @@
           <div class="panel-heading" style="font-weight: bold;">Message</div>
           <div class="panel-body">Hello sir , I would like to request with you about that in our house we have issues to
             solve.xx aaaa aaa aa</div>
+
           <div class="panel-heading" style="font-weight: bold;">Location</div>
           <div class="panel-body">Minglanilla, Cebu City</div>
           <div class="panel-heading" style="font-weight: bold;">Email</div>
@@ -98,8 +95,8 @@
           <div class="panel-heading" style="font-weight: bold;">Contact Customer</div>
           <div class="panel-body d-flex gap-3">
 
-            <button class="btn btn-primary"><i class="fa-solid fa-phone-volume"></i></button>
-            <button class="btn btn-primary"><i class="fa-solid fa-envelope"></i></button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-phone-volume"></i></button>
+            <button type="submit"  class="btn btn-primary"><i class="fa-solid fa-envelope"></i></button>
           </div>
           <div class="panel-body">
             <div class="alert alert-warning" role="alert">
@@ -121,9 +118,11 @@
 
 
 
+  <app-footer></app-footer>
+
 </body>
 
 </html>
 
 
-<app-footer></app-footer>
+
