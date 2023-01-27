@@ -1,0 +1,116 @@
+<body>
+
+  <app-navbar></app-navbar>
+  <br><br><br><br>
+  <!-- Buttons trigger collapse -->
+  <div class="container">
+
+    <button class="btn btn-primary" type="button" (click)="basicCollapse.toggle()"
+      [attr.aria-expanded]="!basicCollapse.collapsed" aria-controls="collapseExample">
+      Confirm Transactions
+    </button>
+
+    <!--Collapsed content-->
+    <div class="mt-3" id="collapseExample" mdbCollapse #basicCollapse="mdbCollapse">
+      <div class="alert alert-warning">Here verifies your transaction when the processed is done. Be sure you are honest
+        in verification and has possible accept the consequences when not
+        following to our regulations!
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between">
+        <img src="../../assets/images/transaction.png" id="sched_image" alt="transac">
+        <h3 style="position: relative;top: 5px;">Transactions</h3>
+      </div>
+
+      <button class="btn btn-primary" (click)="printTransac()">
+
+
+        <i class="fa-solid fa-print"></i></button>
+    </div>
+
+    <br>
+    <div class="table-container">
+      <table class="table table-hover ">
+        <thead class="bg-dark" style="color: rgba(255, 255, 255, 0.975);font-weight: 400;">
+          <th>#ID</th>
+          <th>Customer's Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Status</th>
+          <!-- <th>Action</th> -->
+        </thead>
+        <br>
+        <tbody *ngIf="customers.length" style="background-color: rgba(0, 0, 0, 0.047);">
+          <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.phone}}</td>
+            <td style="height: 100px;width: 200px;" readonly>{{customer.address}}</td>
+            <td>
+              <div class="alert alert-warning text-center">Pending</div>
+            </td>
+            <td>
+              <!-- <button class="btn btn-info" routerLink="/edit/{{customer.id}}">Edit</button>&nbsp; -->
+              <!-- <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Remove</button> -->
+              <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+    </div>
+
+    <button class="btn btn-primary" routerLink="/add">Add New Customer</button>
+  </div>
+
+
+
+
+  <div class="card-body">
+
+    <table class="table table-bordered">
+      <thead class="bg-dark" style="color: rgba(255, 255, 255, 0.975);font-weight: 400;">
+        <th>#ID</th>
+        <th>Customer's Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Status</th>
+        <!-- <th>Action</th> -->
+      </thead>
+      <tbody *ngIf="customers.length" style="background-color: rgba(0, 0, 0, 0.047);">
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.id}}</td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.phone}}</td>
+          <td style="height: 100px;width: 200px;" readonly>{{customer.address}}</td>
+          <td>
+            <div class="alert alert-warning text-center">Pending</div>
+          </td>
+          <td>
+            <!-- <button class="btn btn-info" routerLink="/edit/{{customer.id}}">Edit</button>&nbsp; -->
+            <!-- <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Remove</button> -->
+            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+  </div>
+  <br><br><br>
+  <app-footer></app-footer>
+
+</body>

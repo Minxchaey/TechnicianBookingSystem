@@ -12,11 +12,18 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerRegisterComponent } from './customer-register/customer-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SettingsTechnicianComponent } from './settings-technician/settings-technician.component';
-import { RequestTechnicianComponent } from './request-technician/request-technician.component';
+import { ReqTechnicianComponent } from './req-technician/req-technician.component';
+import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
+
+
+
+
 
 
 
 const routes: Routes = [
+
+
   {
     path: 'add', component: NewArticleComponent
   },
@@ -39,7 +46,7 @@ const routes: Routes = [
     path: 'apply', component: ApplyComponent
   },
   {
-    path: 'transactions', component: ArticlesComponent
+    path: 'transactions/1', component: TransactionsTechnicianComponent
   },
   {
     path: 'home/1', component: HomeComponent
@@ -53,10 +60,9 @@ const routes: Routes = [
   {
     path: 'settings/1', component: SettingsTechnicianComponent
 
-  }
-  ,
+  },
   {
-    path: 'request/1', component: RequestTechnicianComponent
+    path: 'request/1', component: ReqTechnicianComponent
 
   }
 ];

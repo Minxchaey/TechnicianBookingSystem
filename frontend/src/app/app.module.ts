@@ -18,7 +18,6 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerRegisterComponent } from './customer-register/customer-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SettingsTechnicianComponent } from './settings-technician/settings-technician.component';
-import { RequestTechnicianComponent } from './request-technician/request-technician.component';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -35,7 +34,9 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ReqTechnicianComponent } from './req-technician/req-technician.component';
+import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
+// import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustomerRegisterComponent,
     AboutUsComponent,
     SettingsTechnicianComponent,
-    RequestTechnicianComponent
+    ReqTechnicianComponent,
+    TransactionsTechnicianComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +80,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
+    // DataTablesModule
 
   ],
   providers: [],

@@ -15,7 +15,7 @@ export class ArticleService {
   }
 
   httpOptions = {
-    headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' })
+    headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' ,   'Authorization': `Bearer ${localStorage.getItem('token')}`})
   };
 
   addCustomers(customer:any): Observable<any>{
@@ -24,7 +24,11 @@ export class ArticleService {
   }
 
   find(id:number): Observable<any>{
-    return this.http.get<any>(this.url+ `/api/customer/`+id);
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+
+    return this.http.get<any>(this.url+ `/api/customer/`+id,  { headers: headers });
   }
 
   update(id : number, customer:any): Observable<any>{
