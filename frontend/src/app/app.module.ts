@@ -36,7 +36,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReqTechnicianComponent } from './req-technician/req-technician.component';
 import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
-// import { DataTablesModule } from 'angular-datatables';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,7 @@ import { TransactionsTechnicianComponent } from './transactions-technician/trans
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
-    // DataTablesModule
+    DataTablesModule
 
   ],
   providers: [],

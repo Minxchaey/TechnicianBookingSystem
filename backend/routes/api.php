@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerAccountController;
 use App\Http\Controllers\TechnicianAccountController;
+use App\Http\Controllers\TechnicianFeedbackController;
+use App\Http\Controllers\TechnicianScheduleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,15 +21,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::post("/register/technician", [TechnicianAccountController::class, 'store']);
 Route::post("/register/customer", [CustomerAccountController::class, 'store']);
+Route::post('/login/technician', [AuthController::class, "loginTechnicianAcc"]);
+Route::post('/login/customer', [AuthController::class, "loginCustomerAcc"]);
+
 Route::get("customer", [CustomerAccountController::class, 'index']);
 
 Route::middleware('auth:sanctum')->group(function () {
-// Route::apiResource('customer', CustomerAccountController::class);
 
     Route::get("customer/{id}", [CustomerAccountController::class, 'show']);
     Route::put("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::patch("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::delete("customer/{id}", [CustomerAccountController::class, 'destroy']);
+
+    Route::get("schedule/{id}", [TechnicianScheduleController::class, 'show']);
+    Route::post("schedule", [TechnicianScheduleController::class, 'store']);
+
+    Route::post("feedback", [TechnicianFeedbackController::class, 'store']);
 
     Route::post('customer/logout', [AuthController::class, "logoutCustomerAcc"]);
     Route::post('technician/logout', [AuthController::class, "logoutTechnicianAcc"]);
@@ -37,6 +46,3 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::middleware(['auth:sanctum', 'email_verified'])->get('/user', function (Request $request) {
     return $request->user();
 });
-// Route::middleware(['cors'])->post('login', [AuthController::class, "loginTechnicianAcc"]);
-Route::post('/login/technician', [AuthController::class, "loginTechnicianAcc"]);
-Route::post('/login/customer', [AuthController::class, "loginCustomerAcc"]);

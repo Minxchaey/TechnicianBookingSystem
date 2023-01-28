@@ -15,7 +15,8 @@ export class TransactionsTechnicianComponent implements OnInit {
   ) { }
   customers: any;
 
-  dtTrigger:Subject<any>=new Subject<any>();
+
+
   showCustomers() {
     this.customers = this.articlesService
       .listCustomers()
@@ -47,10 +48,14 @@ export class TransactionsTechnicianComponent implements OnInit {
 
 
   }
-
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
   ngOnInit(): void {
     this.showCustomers();
 
+    this.dtOptions = {
+      pagingType: 'full_numbers'
+    };
   }
 
 }

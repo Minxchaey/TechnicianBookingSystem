@@ -224,3 +224,12 @@ body{
   cursor:pointer;
   color: white;
 }
+.err_name{
+  display: none;
+}
+input::placeholder{
+  color: red;
+}
+.error_cred{
+  display: none;
+}

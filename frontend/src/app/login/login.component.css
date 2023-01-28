@@ -145,3 +145,6 @@ form .signup-link a:hover{
 #reg:hover{
   color: #004242ac;
 }
+.error_cred{
+  display: none;
+}

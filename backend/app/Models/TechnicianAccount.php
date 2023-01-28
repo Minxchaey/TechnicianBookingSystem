@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Place;
+use App\Models\TechnicianSchedule;
 use Illuminate\Database\Eloquent\Model;
 
 class TechnicianAccount extends Model
@@ -41,8 +42,8 @@ class TechnicianAccount extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function place(){
-        return $this->hasOne(Place::class);
+    public function schedule(){
+        return $this->hasMany(TechnicianSchedule::class);
     }
 
     /**

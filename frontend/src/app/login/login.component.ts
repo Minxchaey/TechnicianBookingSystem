@@ -1,5 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -15,8 +16,13 @@ export class LoginComponent implements OnInit {
 
   form!: FormGroup;
   pass!: string;
+  @ViewChild('email') em!: ElementRef;
+  @ViewChild('password') pa!: ElementRef;
+  @ViewChild('error') er!: ElementRef;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private articleService: ArticleService) {
+
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private articleService: ArticleService, @Inject(DOCUMENT) document: Document) {
   }
   ngOnInit() {
     this.form = this.fb.group({
@@ -31,6 +37,7 @@ export class LoginComponent implements OnInit {
       'Access-Control-Allow-Origin': '*'
     })
   };
+
   submit(email: string, password: string) {
 
 
@@ -58,13 +65,22 @@ export class LoginComponent implements OnInit {
 
               } else {
                 console.log('no account');
+                this.em.nativeElement.value = "";
+                this.pa.nativeElement.value = '';
+                this.er.nativeElement.style.display = 'block';
+                // window.location.reload();
               }
 
 
             },
-            error => {
-              console.log('error');
-              console.log(error);
+            // error => {
+            //   this.em.nativeElement.value = "";
+            //   this.pa.nativeElement.value = '';
+            // }
+            (errorResponse: HttpErrorResponse) => {
+              // Extract form error messages from API  <------ HERE!!!
+              // const messages = extractErrorMessagesFromErrorResponse(errorResponse);
+              console.log(errorResponse);
             }
           );
 
@@ -72,13 +88,24 @@ export class LoginComponent implements OnInit {
         }
 
       },
-      error => {
-        console.log('error');
-        console.log(error);
+      (errorResponse: HttpErrorResponse) => {
+        // Extract form error messages from API  <------ HERE!!!
+        // const messages = extractErrorMessagesFromErrorResponse(errorResponse);
+        console.log('Invalid Credentials');
+        this.er.nativeElement.style.display = 'block';
+        this.em.nativeElement.value = "";
+        this.pa.nativeElement.value = '';
       }
     );
 
   }
+  removeError(){
+    this.er.nativeElement.style.display = 'none';
+  }
 }
 
+
+function extractErrorMessagesFromErrorResponse(errorResponse: HttpErrorResponse) {
+  throw new Error('Function not implemented.');
+}
 

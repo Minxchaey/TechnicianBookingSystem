@@ -15,43 +15,51 @@
 
       <div class="inputfield form-group">
         <label>Full Name</label>
-        <input type="text" class="input" formControlName="name">
+        <input type="text" class="input" formControlName="name" #err_name>
       </div>
+
       <div class="inputfield form-group">
         <label>Age</label>
-        <input type="number" class="input" formControlName="age" >
+        <input type="number" class="input" formControlName="age" #err_age>
       </div>
       <div class="inputfield">
         <label>Birthdate</label>
-        <input type="date" class="input" formControlName="birthdate">
+        <input type="date" class="input" #birthdate (click)="removeError()">
       </div>
+      <div class="alert alert-danger error_cred text-center p-2" #err_birth>This field is also required!</div>
+      <br>
       <div class="inputfield">
         <label>Gender</label>
         <div class="custom_select">
-          <select  formControlName="gender">
+          <select formControlName="gender" placeholder="" (click)="removeError()" #gender>
             <option value="">Select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </div>
       </div>
+      <div class="alert alert-danger error_cred text-center p-2" #err_gender>This field is also required!</div>
+      <br>
 
       <div class="inputfield">
         <label>Email Address</label>
-        <input type="text" class="input" formControlName="email">
+        <input type="text" class="input" formControlName="email" #err_email (click)="removeError()">
       </div>
+      <div class="alert alert-danger error_cred text-center p-2" #err_valid_email>The email address is invalid!</div>
+      <br>
       <div class="inputfield">
         <label>Phone Number</label>
-        <input type="text" class="input" formControlName="phone">
+        <input type="number" class="input" formControlName="phone" #err_phone (click)="removeError()">
       </div>
       <div class="inputfield">
         <label>Address</label>
-        <textarea class="textarea" formControlName="address"></textarea>
+        <textarea class="textarea" formControlName="address" placeholder="" #err_address
+          (click)="removeError()"></textarea>
       </div>
       <div class="inputfield">
         <label>Category</label>
         <div class="custom_select">
-          <select formControlName="category">
+          <select formControlName="category" (click)="removeError()">
             <option value="">Select</option>
             <option value="electrician">Electrical Service Technician</option>
             <option value="computer-technician">Computer Technician</option>
@@ -61,30 +69,50 @@
         </div>
 
       </div>
-      <div class="inputfield" >
+      <div class="alert alert-danger error_cred text-center p-2" #err_category>This field is also required!</div>
+      <br>
+      <div class="inputfield">
         <label>Upload Valid ID</label>
-        <input type="file"  formControlName="valid_id">
+        <input type="file" formControlName="valid_id" (click)="removeError()">
       </div>
+      <div class="alert alert-danger error_cred text-center p-2" #err_valid_id>This field is also required!</div>
+      <br>
       <div class="inputfield">
         <label>Password</label>
-        <input type="password" class="input"formControlName="password">
+        <input type="password" class="input" formControlName="password" #err_password (click)="removeError()">
       </div>
       <div class="inputfield">
         <label>Confirm Password</label>
-        <input type="password" class="input" formControlName="password_confirmation">
+        <input type="password" class="input" formControlName="password_confirmation" #err_cpassword
+          (click)="removeError()">
       </div>
+      <div class="alert alert-danger error_cred text-center p-3" #error_p_confirm>Password confirmation does not match!
+      </div>
+      <br>
+      <div class="alert alert-danger error_cred text-center p-3" #error_p_least>The password must be at least 6
+        characters.
+      </div>
+      <br>
       <div class="inputfield terms">
         <label class="check">
-          <input type="checkbox">
+          <input type="checkbox" #err_check (click)="removeError()">
           <span class="checkmark"></span>
         </label>
         <p>Agreed to terms and conditions</p>
+
       </div>
+      <br>
+      <div class="alert alert-danger error_cred text-center p-3" #error_check_mess>You cannot proceed when you are not agreeing to our terms and conditions!
+      </div>
+      <br>
+
       <div class="inputfield">
         <input type="back" value="Return" class="btn" routerLink="/login">
         <input type="submit" value="Register" class="btn" [disabled]="!form.valid && (pass != cpass)">
       </div>
     </form>
+    <br>
+    <!-- <div class="alert alert-danger error_cred text-center p-3" #error >Not meet all the correct credentials!</div> -->
   </div>
   <div class="bg"></div>
 </body>

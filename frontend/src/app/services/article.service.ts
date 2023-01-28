@@ -46,6 +46,16 @@ export class ArticleService {
   login2(credentials:any): Observable<any>{
     return this.http.post(this.url+ `/api/login/technician`,credentials, this.httpOptions);
   }
+
+  showSchedules(id:number): Observable<any>{
+    return this.http.get(this.url+ `/api/schedule/` + id , this.httpOptions);
+  }
+  addSchedules(scheds:any): Observable<any>{
+    return this.http.post(this.url+ `/api/schedule` , scheds, this.httpOptions);
+  }
+  addFeedbacks(feed:any): Observable<any>{
+    return this.http.post(this.url+ `/api/feedback` , feed, this.httpOptions);
+  }
 }
 
 

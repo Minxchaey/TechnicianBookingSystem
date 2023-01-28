@@ -1,5 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   }
   pass: any;
   cpass: any;
+
   ngOnInit() {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -57,35 +58,141 @@ export class RegisterComponent implements OnInit {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json' })
   };
-  submit() {
+  error_data: any = [];
+  @ViewChild('err_name') err_name!: ElementRef;
+  @ViewChild('err_age') err_age!: ElementRef;
+  @ViewChild('err_birth') err_birth!: ElementRef;
+  @ViewChild('err_gender') err_gender!: ElementRef;
+  @ViewChild('err_email') err_email!: ElementRef;
+  @ViewChild('err_phone') err_phone!: ElementRef;
+  @ViewChild('err_address') err_address!: ElementRef;
+  @ViewChild('err_category') err_category!: ElementRef;
+  @ViewChild('err_valid_id') err_valid_id!: ElementRef;
+  @ViewChild('err_password') err_password!: ElementRef;
+  @ViewChild('err_cpassword') err_cpassword!: ElementRef;
+  @ViewChild('err_check') err_check!: ElementRef;
+  @ViewChild('error_p_confirm') error_p_confirm!: ElementRef;
+  @ViewChild('error_p_least') error_p_least!: ElementRef;
+  @ViewChild('error_check_mess') error_check_mess!: ElementRef;
+  @ViewChild('err_valid_email') err_valid_email!: ElementRef;
+  @ViewChild('gender') gender!: ElementRef;
+  @ViewChild('birthdate') birthdate!: ElementRef;
+
+  submit(): void {
     const formData = this.form.controls;
 
     const data = {
-      name: formData['name'].value,
-      age: formData['age'].value,
-      birthdate: formData['birthdate'].value,
-      gender: formData['gender'].value,
-      email: formData['email'].value,
-      phone: formData['phone'].value,
-      address: formData['address'].value,
+      name:  this.err_name.nativeElement.value,
+      age: this.err_age.nativeElement.value,
+      birthdate: this.birthdate.nativeElement.value,
+      gender: this.gender.nativeElement.value,
+      email: this.err_email.nativeElement.value,
+      phone: this.err_phone.nativeElement.value,
+      address:  this.err_address.nativeElement.value,
       category: formData['category'].value,
       valid_id: formData['valid_id'].value,
-      password: formData['password'].value,
-      password_confirmation: formData['password_confirmation'].value,
+      password:  this.err_password.nativeElement.value,
+      password_confirmation:  this.err_cpassword.nativeElement.value,
 
 
     }
     // console.log(data);
-    return this.http.post('http://localhost:8000/api/register/technician', data, this.httpOptions)
-      .subscribe(
-        () => {
-          this.router.navigate(['/login'])
-        },
-        err => {
-          console.log(err)
-        }
-      );
 
+    if (!this.err_check.nativeElement.checked) {
+      this.error_check_mess.nativeElement.style.display = 'block';
+    } else {
+      this.http.post('http://localhost:8000/api/register/technician', data, this.httpOptions)
+        .subscribe(
+          () => {
+            this.router.navigate(['/login'])
+          },
+          (errorResponse: HttpErrorResponse) => {
+            console.log('Cannot register!');
+            // this.error_data = errorResponse.error.errors;
+            // const propertyErrors: Array<string> = errorResponse.error.errors[0];
+            if (errorResponse.error.errors) {
+
+              // 5 - For each error property (which is a form field)
+              for (const property in errorResponse.error.errors) {
+
+                if (errorResponse.error.errors.hasOwnProperty(property)) {
+
+                  // 6 - Extract it's array of errors
+                  const propertyErrors: Array<string> = errorResponse.error.errors[property];
+
+                  // 7 - Push all errors in the array to the errors array
+                  propertyErrors.forEach(error => this.error_data.push(error));
+
+                }
+
+              }
+
+
+            }
+            console.log(this.error_data);
+
+            if (this.error_data.indexOf('The name field is required.') > -1) {
+              this.err_name.nativeElement.placeholder = 'Input field is required!';
+            }
+            if (this.error_data.indexOf('The age field is required.') > -1) {
+              this.err_age.nativeElement.placeholder = 'Input field is required!';
+            }
+            if (this.error_data.indexOf('The birthdate field is required.') > -1) {
+              this.err_birth.nativeElement.style.display = 'block';
+            }
+            // if (this.error_data.indexOf('The gender field is required.') > -1) {
+            //   this.err_gender.nativeElement.placeholder = 'Input field is required!';
+            // }
+            if (this.error_data.indexOf('The email field is required.') > -1) {
+              this.err_email.nativeElement.placeholder = 'Input field is required!';
+            }
+            if (this.error_data.indexOf('The gender field is required.') > -1) {
+              this.err_gender.nativeElement.style.display = 'block';
+            }
+            if (this.error_data.indexOf('The phone field is required.') > -1) {
+              this.err_phone.nativeElement.placeholder = 'Input field is required!';
+            }
+            if (this.error_data.indexOf('The address field is required.') > -1) {
+              this.err_address.nativeElement.placeholder = 'Input field is required!';
+            }
+
+            if (this.error_data.indexOf('The valid id field is required.') > -1) {
+              this.err_valid_id.nativeElement.style.display = 'block';
+            }
+            if (this.error_data.indexOf('The category field is required.') > -1) {
+              this.err_category.nativeElement.style.display = 'block';
+            }
+            if (this.error_data.indexOf('The password confirmation does not match.') > -1) {
+              this.error_p_confirm.nativeElement.style.display = 'block';
+            }
+            if (this.error_data.indexOf('The password must be at least 6 characters.') > -1) {
+              this.error_p_least.nativeElement.style.display = 'block';
+            }
+            if (this.error_data.indexOf('The email must be a valid email address.') > -1) {
+              this.err_valid_email.nativeElement.style.display = 'block';
+            }
+
+
+
+          }
+        );
+    }
+
+
+
+  }
+
+  removeError() {
+    this.error_data = [];
+    this.err_birth.nativeElement.style.display = 'none';
+    this.err_gender.nativeElement.style.display = 'none';
+    this.err_category.nativeElement.style.display = 'none';
+    this.err_valid_id.nativeElement.style.display = 'none';
+    this.error_p_confirm.nativeElement.style.display = 'none';
+    this.error_p_least.nativeElement.style.display = 'none';
+    this.error_p_confirm.nativeElement.style.display = 'none';
+    this.error_check_mess.nativeElement.style.display = 'none';
+    this.err_valid_email.nativeElement.style.display = 'none';
   }
 
 }
