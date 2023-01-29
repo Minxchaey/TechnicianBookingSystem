@@ -7,6 +7,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Place;
 use App\Models\TechnicianSchedule;
+use App\Models\TechnicianCertificate;
 use Illuminate\Database\Eloquent\Model;
 
 class TechnicianAccount extends Model
@@ -44,6 +45,9 @@ class TechnicianAccount extends Model
 
     public function schedule(){
         return $this->hasMany(TechnicianSchedule::class);
+    }
+    public function certificates(){
+        return $this->hasMany(TechnicianCertificate::class);
     }
 
     /**

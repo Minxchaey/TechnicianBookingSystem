@@ -84,8 +84,6 @@ export class CustomerRegisterComponent implements OnInit {
       email: this.err_email.nativeElement.value,
       phone: this.err_phone.nativeElement.value,
       address: this.err_address.nativeElement.value,
-      category: formData['category'].value,
-      valid_id: formData['valid_id'].value,
       password: this.err_password.nativeElement.value,
       password_confirmation: this.err_cpassword.nativeElement.value,
 
@@ -96,7 +94,7 @@ export class CustomerRegisterComponent implements OnInit {
     if (!this.err_check.nativeElement.checked) {
       this.error_check_mess.nativeElement.style.display = 'block';
     } else {
-      this.http.post('http://localhost:8000/api/register/technician', data, this.httpOptions)
+      this.http.post('http://localhost:8000/api/register/customer', data, this.httpOptions)
         .subscribe(
           () => {
             this.router.navigate(['/login'])
@@ -149,6 +147,9 @@ export class CustomerRegisterComponent implements OnInit {
             }
             if (this.error_data.indexOf('The address field is required.') > -1) {
               this.err_address.nativeElement.placeholder = 'Input field is required!';
+            }
+             if (this.error_data.indexOf('The password confirmation does not match.') > -1) {
+              this.error_p_confirm.nativeElement.style.display = 'block';
             }
             if (this.error_data.indexOf('The password confirmation does not match.') > -1) {
               this.error_p_confirm.nativeElement.style.display = 'block';

@@ -53,8 +53,11 @@ export class ArticleService {
   addSchedules(scheds:any): Observable<any>{
     return this.http.post(this.url+ `/api/schedule` , scheds, this.httpOptions);
   }
-  addFeedbacks(feed:any): Observable<any>{
+  addFeedbacks(feed:string): Observable<any>{
     return this.http.post(this.url+ `/api/feedback` , feed, this.httpOptions);
+  }
+  addCertificate(cer:any): Observable<any>{
+    return this.http.post(this.url+ `/api/certificate` , cer, this.httpOptions);
   }
 }
 

@@ -323,14 +323,19 @@
 
         <div class="form-floating mb-3">
           <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled"
-            style="height: 130px;resize: none;border: solid 2px #004242;" #message></textarea>
+            style="height: 130px;resize: none;border: solid 2px #004242;" (click)="errRemove()" #concern_message></textarea>
           <label for="floatingTextarea2Disabled">Your text here...</label>
 
         </div>
-        <button type="button" class="btn btn-primary " (click) = "addConcern(message.value)">Send Concern</button>
+        <button type="button" class="btn btn-primary " (click) = "addConcern(concern_message.value)">Send Concern</button>
+        <br><br>
+        <div class="alert alert-danger  concern-alert" #errconcern>The message field is required!</div>
+        <div class="alert alert-success  concern-alert" #succconcern>Your concern was successfully send!</div>
         <div style="padding-top: 20px;">
           <p style="color: rgba(0, 0, 0, 0.707);">By providing the information above, be sure you agree to our terms and
             condition.</p>
+           
+  
         </div>
 
 

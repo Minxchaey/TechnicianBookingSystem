@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerAccountController;
 use App\Http\Controllers\TechnicianAccountController;
 use App\Http\Controllers\TechnicianFeedbackController;
 use App\Http\Controllers\TechnicianScheduleController;
+use App\Http\Controllers\TechnicianCertificateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,11 +38,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post("schedule", [TechnicianScheduleController::class, 'store']);
 
     Route::post("feedback", [TechnicianFeedbackController::class, 'store']);
+ 
 
     Route::post('customer/logout', [AuthController::class, "logoutCustomerAcc"]);
     Route::post('technician/logout', [AuthController::class, "logoutTechnicianAcc"]);
 
 });
+Route::apiResource("certificate", TechnicianCertificateController::class);
 
 Route::middleware(['auth:sanctum', 'email_verified'])->get('/user', function (Request $request) {
     return $request->user();

@@ -4,51 +4,123 @@
     <div class="background_image">
         <div style="z-index: 2;position: relative;left: 50px;top:230px">
             <h1 style="color: white;">Apply here the details <br>that you want to achieve.</h1>
-            <p style="color: white;"> Gain customer experience by upgrading your field and communicate to different customers.</p>
+            <p style="color: white;"> Gain customer experience by upgrading your position and communicate to different customers.</p>
             <!-- <button type="button" class="btn btn-primary ">Contact Customers</button>&nbsp;
             <button type="button" class="btn btn-primary ">Enhance your Field</button> -->
         </div>
         <div class="user_exp_bg"></div>
     </div>
 </div>
+                                        
 <div class="container">
     <div class="d-flex align-items-center justify-content-between" style="border-bottom:2px solid black;padding-bottom:10px">
         <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px;">
             <img src="../../assets/images/options.png" id="sched_image" alt="time" srcset="">
-            <h5>Your Category Field</h5>
+             <div>
+              <h5>Your Category Field</h5>
+              <small class="text-success">Status: current</small>
+             </div>
+            
           </div>
-        <button type="button" class="btn btn-primary ">Add Category</button> 
+        <!-- <button type="button" class="btn btn-primary ">Add Category</button>  -->
+        <p>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample2">Show Category</button>&nbsp;
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Add Category</button>
+
+        </p>
     </div>
-    <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="alert alert-success">
+      This part will show the identity of your current position.
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+      
+          <div class="container bootstrap snippets bootdey">
+            <div class="panel-body inf-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
+                        <ul title="Ratings" class="list-inline ratings text-center">
+                            <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <strong class="alert alert-success">Information Details</strong><br>
+                        <div class="table-responsive">
+                        <table class="table table-user-information" >
+                            <tbody>
+                                <tr>        
+                                <br>
+                                  
+                                </tr>
+                                <tr>    
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user  text-primary"></span>    
+                                            Type                                                
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        Electrical Technician     
+                                    </td>
+                                </tr>
+                                <tr>        
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                            Certification Status                                              
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary text-center">
+                                        <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+                                            <input type="file" class="btn btn-primary" formControlName="image" (change) ="changeImage($event)"
+                                           #cer_file>
+                                            <!-- <div *ngIf="submitted && f.image.errors" class="alert alert-danger">
+                                                <div *ngIf="f.image.errors.required">Image is required! </div>
+                                            </div> -->
+                                            <button class="btn" >Add Certificate</button>
+                                        </form>
+                                   
+                                    </td>
+                                </tr>
+                                <tr>        
+                                  <td>
+                                      <strong>
+                                          <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                          Date                                              
+                                      </strong>
+                                  </td>
+                                  <td class="text-primary">
+                                      Janaury 23, 2023  
+                                  </td>
+                              </tr>
+            
+                                                            
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                                                    
+             
+        </div>
+      </div>
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+      </div>
+    </div>
+   
     
 
 </div>
