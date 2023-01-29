@@ -59,7 +59,10 @@ export class ApplyComponent implements OnInit {
     return this.form.controls;
   }
   changeImage(event :any){
-    this.files = event.target.files[0];
+    this.files = (event.target as HTMLInputElement)?.files?.[0];
+    this.form.patchValue({
+      image:this.files
+    });
     console.log(this.files);
   }
 
