@@ -39,23 +39,21 @@ class TechnicianCertificateController extends Controller
         //     'image' => 'required'
         // ]);
 
-        if ($request ->hasFile('image')){
-$cfn = $request->file('image')->getClientOriginalName();
-$fno = pathinfo($cfn, PATHINFO_FILENAME);
-$e = $request->file('image')->getClientOriginalExtension();
-$cp = str_replace(' ', '_',$fno).'-'.rand().'_'.time().'.'.$e;
-       $path = $request->file('image')->storeAs('public/cer_images', $cp);
-dd($path);
+        if ($request->hasFile('image')) {
+            $cfn = $request->file('image')->getClientOriginalName();
+            $fno = pathinfo($cfn, PATHINFO_FILENAME);
+            $e = $request->file('image')->getClientOriginalExtension();
+            $cp = str_replace(' ', '_', $fno) . '-' . rand() . '_' . time() . '.' . $e;
+            $path = $request->file('image')->storeAs('public/cer_images', $cp);
+            dd($path);
 
-  return TechnicianCertificate::create([
-            'technician_account_id' => $request->technician_account_id,
-            'image' => $cp 
+            return TechnicianCertificate::create([
+                'technician_account_id' => $request->technician_account_id,
+                'image' => $cp,
 
-        ]);
-    }
+            ]);
+        }
 
-        
-      
     }
 
     /**

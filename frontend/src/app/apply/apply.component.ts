@@ -59,10 +59,11 @@ export class ApplyComponent implements OnInit {
     return this.form.controls;
   }
   changeImage(event :any){
-    this.files = (event.target as HTMLInputElement)?.files?.[0];
-    this.form.patchValue({
-      image:this.files
-    });
+    // this.files = (event.target as HTMLInputElement)?.files?.[0];
+    this.files = event.srcElement.files[0];
+    // this.form.patchValue({
+    //   image:this.files
+    // });
     console.log(this.files);
   }
 
@@ -72,13 +73,14 @@ export class ApplyComponent implements OnInit {
        console.log("not send");
     }
     const formData = new FormData();
-    formData.append("image", this.form.controls['image'].value);
-    this.cers_data = {
-          'technician_account_id': Number(this.user.id),
-          'image' : formData
-        };
-        console.log(  this.cers_data);
-     this.articleService.addCertificate(this.cers_data).subscribe(
+    formData.append("technician_account_id", this.user.id);
+    formData.append("image", this.files, this.files.name);
+    // this.cers_data = {
+    //       'technician_account_id': Number(this.user.id),
+    //       'image' : formData
+    //     };
+        console.log(  formData);
+     this.articleService.addCertificate(formData as any ).subscribe(
       (      res: any) => {
        console.log(res);
       });
@@ -99,7 +101,7 @@ export class ApplyComponent implements OnInit {
         this.user = result;
         this.articleService.showSchedules(Number(this.user.id)).subscribe(
           res => {
-          
+
           });
       }
     );

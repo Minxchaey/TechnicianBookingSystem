@@ -40,11 +40,11 @@ export class ArticleService {
   }
 
   login1(credentials:any): Observable<any>{
-    return this.http.post(this.url+ `/api/login/customer`,credentials, this.httpOptions);
+    return this.http.post(this.url+ `/api/login/customer`,credentials);
   }
 
   login2(credentials:any): Observable<any>{
-    return this.http.post(this.url+ `/api/login/technician`,credentials, this.httpOptions);
+    return this.http.post(this.url+ `/api/login/technician`,credentials);
   }
 
   showSchedules(id:number): Observable<any>{
