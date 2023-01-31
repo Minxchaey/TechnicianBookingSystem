@@ -1,0 +1,29 @@
+
+
+
+.panel {
+    height: 60%;
+    margin-bottom:0px;
+  }
+  
+  
+  .color_key {
+    float:left;
+    height:22px;
+    width: 8px;
+    margin-right: 8px;
+  }
+  .table
+  {
+    border: 2px solid rgba(0, 0, 0, 0.094);
+  
+  
+  }
+  .table-container{
+    height:450px;
+    overflow: auto;
+  }
+  #sched_image{
+    width: 40px;
+  }
+  

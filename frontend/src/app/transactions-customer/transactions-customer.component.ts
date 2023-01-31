@@ -1,38 +1,38 @@
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
-import { Data, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ArticleService } from '../services/article.service';
 
 @Component({
-  selector: 'app-transactions-technician',
-  templateUrl: './transactions-technician.component.html',
-  styleUrls: ['./transactions-technician.component.css']
+  selector: 'app-transactions-customer',
+  templateUrl: './transactions-customer.component.html',
+  styleUrls: ['./transactions-customer.component.css']
 })
-export class TransactionsTechnicianComponent implements OnInit {
+export class TransactionsCustomerComponent implements OnInit  {
   constructor(private articlesService: ArticleService, private router: Router, private http: HttpClient, @Inject(DOCUMENT) document: Document,
   ) { }
-  customers: any;
+  technicians: any;
 
 
 
-  showCustomers() {
-    this.customers = this.articlesService
-      .listCustomers()
-      .subscribe((customer) => {
-        this.customers = customer;
-        console.log(this.customers);
+  showTechnicians() {
+    this.technicians = this.articlesService
+      .listTechnicians()
+      .subscribe((technicians) => {
+        this.technicians = technicians;
+        console.log(this.technicians);
       });
   }
 
-  deleteCustomer(id: any) {
-    this.articlesService.deleteCustomer(id).subscribe(
+  deleteTechnicians(id: any) {
+    this.articlesService.deleteTechnicians(id).subscribe(
       res => {
-        this.customers = this.customers.filter((a: any) => a.id != id);
+        this.technicians = this.technicians.filter((a: any) => a.id != id);
       });
 
-    this.router.navigateByUrl('/transactions/1');
+    this.router.navigateByUrl('/transactions/2');
 
   }
 
@@ -51,12 +51,10 @@ export class TransactionsTechnicianComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
   ngOnInit(): void {
-    this.showCustomers();
+    this.showTechnicians();
 
     this.dtOptions = {
       pagingType: 'full_numbers'
     };
   }
-
 }
-

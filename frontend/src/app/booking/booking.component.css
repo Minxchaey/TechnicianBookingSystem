@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background-image: linear-gradient(to right, rgba(8, 200, 207, 0.75), rgba(100, 154, 147, 0.8)), url(https://images.pexels.com/photos/7238606/pexels-photo-7238606.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Fira Sans', sans-serif;
+}
+.banner {
+    min-height: 100vh;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner-img.jpg") center/cover no-repeat; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 70px;
+}
+
+.card-container {
+    margin-right: 450px;
+    display: grid;
+    grid-template-columns: 420px 420px;
+}
+
+/* .card-img {
+    background: url("card-img.jpg") center/cover no-repeat;
+} */
+
+.banner h2 {
+    padding-bottom: 40px;
+    /* margin-bottom: 20px; */
+    margin-right: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+.card-content {
+    height: 100px;
+    padding: 15px;
+    box-shadow: 10px 10px 5px black;
+    background: #004242;
+    height: 330px;
+    /* border-radius: 25px; */
+    /* border: 2px solid white; */
+}
+
+.card-content h3 {
+    text-align: center;
+    /* color:#004242; */
+    font-weight: bold;
+    padding: 25px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.form-row {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+form select,
+form input {
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+
+form input[type=text],
+form input[type=number],
+form input::placeholder,
+select {
+    color: #9a9a9a;
+}
+
+form input[type=submit] {
+    font-weight: bold;
+    color: #004242;
+    background: #7DF9FF;
+    padding: 8px;
+    width: 120px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 140px;
+}
+
+form input[type=submit]:hover {
+    opacity: 0.9;
+    background: aqua;
+}
+
+@media(max-width: 992px) {
+    .card-container {
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .card-img {
+        height: 330px;
+    }
+}
+
+
+
+.main{
+  background-color:aquamarine ;
+  padding: 14px 30px 10px 30px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 90;
+}
+#logo{
+  width: 40px;
+}
+#logo-txt {
+  position: relative;
+  top: 3px;
+  left:5px;
+  cursor:pointer;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  top:6px;
+  cursor: pointer;
+}
+ul li {
+  list-style-type: none;
+  cursor: pointer;
+  transition: all;
+  color: #004242;
+  font-weight: bold;
+}
+ul li:hover {
+  text-decoration: underline;
+  color:rgba(0, 0, 0, 0.689);
+}
+
+#userlogo{
+  width: 40px;
+  position: relative;
+  top:-1px;
+}
+
+h4{
+color: #004242;
+font-weight: bold;
+}
+input{
+  border: solid 1px #004242;
+}
+button{
+  background-color: #004242;
+  color: white;
+}

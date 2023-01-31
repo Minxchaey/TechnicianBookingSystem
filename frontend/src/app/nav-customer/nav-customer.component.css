@@ -1,0 +1,89 @@
+.main{
+    background-color:aquamarine ;
+    padding: 14px 30px 10px 30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 90;
+  }
+  #logo{
+    width: 40px;
+  }
+  #logo-txt {
+    position: relative;
+    top: 3px;
+    left:5px;
+    cursor:pointer;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    top:6px;
+    cursor: pointer;
+  }
+  
+  .btn{
+    background-color: #004242;
+    color: white;
+  }
+  h5{
+    color: #004242;
+  }
+  li{
+    font-weight: bold;
+    font-size: 15px;
+    list-style-type:none ;
+  }
+  ul li:hover{
+    text-decoration: underline;
+  }
+  
+  #userlogo{
+    width: 40px;
+    position: relative;
+    top:-1px;
+  }
+  
+  /* .drop {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    margin-top:5.30px;
+  } */
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    background:transparent;
+    margin-top: 1px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background:white;
+  
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd; color: #004242; font-weight: bold;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .drop { background:transparent;}

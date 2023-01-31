@@ -1,209 +1,474 @@
-<div class="main">
-  <div class="d-flex align-items-center">
-    <img
-      src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
-      alt="logo"
-      id="logo"
-    />
-    <h4 id="logo-txt" routerLink="/">TechBook</h4>
-  </div>
+<body>
+  <app-nav-customer></app-nav-customer>
+  <!-- <div class="main">
+    <div class="d-flex align-items-center">
+      <img
+        src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
+        alt="logo"
+        id="logo"
+      />
+      <h4 id="logo-txt" routerLink="/">TechBook</h4>
+    </div>
 
     <form class="form-inline d-flex gap-1">
-      <input class="form-control mr-sm-3" style="width: 350px" type="search" placeholder="Search...." aria-label="Search">
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+      <input
+        class="form-control mr-sm-3"
+        style="width: 350px"
+        type="search"
+        placeholder="Search...."
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-dark my-2 my-sm-0"
+        type="submit"
+        class="btn-search"
+      >
+        Search
+      </button>
     </form>
 
-  <div class="d-flex align-items-center gap-3">
-    <ul>
-      <li>Book</li>
-      <li>Request</li>
-      <li routerLink="/transactions">Transactions</li>
-      <li>Settings</li>
-      <i class="fa-solid fa-bell"></i>
-      <button class="btn" routerLink="/login" *ngIf="loggedIn" (click)="logOut()">LOGOUT</button>
-    </ul>
-  </div>
-</div>
-
-<div style="background:rgba(127, 255, 212, 0.3);padding:120px 0px 30px 0px; ">
-  <h1 class="text-center"*ngIf="user">Welcome {{ user.name }}! </h1>
-  <div class="maincontainer">
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Total Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Active Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Pending Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Cancelled Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="d-flex align-items-start gap-4 schedule_page">
-  <div class=" sched">
-    <br>
-    <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px; margin-left: 20px;">
-      <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset="">
-      <h5>Set your schedule!</h5>
-    </div>
-    <br>
-    <div>
-      <div class="d-flex align-items-center gap-3" style="margin-left: 52px;">
-        <div>
-          <small for="date_input">Choose your date</small><br>
-          <input type="date" class="date_input" style="width: 205px;">
-
+    <div class="d-flex align-items-center gap-3">
+      <ul>
+        <li routerLink="request/1">Request</li>
+        <div class="dropdown">
+          <li><label class="drop">Category</label>
+            <div class="dropdown-content">
+              <a>IT Technician</a>
+              <a>Computer Technician</a>
+              <a >Electrical</a>
+            </div>
+          </li>
         </div>
-        <div>
-          <small for="date_input">Start time</small><br>
-          <input type="time" class="date_input" style="width: 205px;">
+        <li routerLink="/transactions">Transactions</li>
+        <li>Settings</li>
+        <i class="fa-solid fa-bell"></i>
+        <button
+          class="btn"
+          routerLink="/login"
+          *ngIf="loggedIn"
+          (click)="logOut()"
+          class="btn-logout"
+        >
+          LOGOUT
+        </button>
+      </ul>
+    </div>
+  </div> -->
 
-        </div>
+  <div
+    style="background: rgba(127, 255, 212, 0.3); padding: 120px 0px 30px 0px"
+  >
+    <h1 class="text-center" *ngIf="user">Welcome {{ user.name }}!</h1>
+    <div class="maincontainer">
+      <div class="subcontainer">
+        <h6 style="font-weight: bold">Total Technicians:</h6>
         <div>
-          <small for="date_input">End time</small><br>
-          <input type="time" class="date_input" style="width: 205px;">
-
+          <p>4 has been processed!</p>
         </div>
       </div>
-      <div class="" style="padding-top: 20px; margin-left: 52px;">
-        <small>Write notes here. (Optional)</small><br>
-        <textarea class="text" name="" id="" cols="80" rows="10" style="resize: none;padding: 20px; border: solid 2px #004242;"
-          placeholder="Write any here..."></textarea>
+      <div class="subcontainer">
+        <h6 style="font-weight: bold">Active Technicians:</h6>
+        <div>
+          <p>4 has been processed!</p>
+        </div>
+      </div>
+      <div class="subcontainer">
+        <h6 style="font-weight: bold">Pending Technicians:</h6>
+        <div>
+          <p>4 has been processed!</p>
+        </div>
+      </div>
+      <div class="subcontainer">
+        <h6 style="font-weight: bold">Cancelled Technicians:</h6>
+        <div>
+          <p>4 has been processed!</p>
+        </div>
       </div>
     </div>
-    <br>
-    <button type="button" class="btn  " style="margin-left: 50px;">Add Schedule</button>
-<br><br><br>
-
-
   </div>
-  <div class="list" style="width: 540px;padding-top: 50px;">
-    <div class="d-flex align-items-center gap-3" style="margin-bottom: 15px;width: 220px;margin-left: 100px;">
-      <!-- <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset=""> -->
-      <h5>List of your schedules!</h5>
-    </div>
-    <table class="table table-striped" >
+
+  <br /><br /><br /><br /><br /><br />
+  <div class="table-wrapper" style="background-color: #004242;">
+    <table class="fl-table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Date</th>
-          <th scope="col">Time Started</th>
-          <th scope="col">Time Ended</th>
-          <th scope="col">Status</th>
+          <th>Electrical</th>
+          <th>Airconditioner</th>
+          <th>Television</th>
+          <th>Computer</th>
+          <!-- <th>Cable</th> -->
         </tr>
       </thead>
-      <tbody class="table-group-divider">
+
+      <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Janaury 4, 2023</td>
-          <td>6:45 AM</td>
-          <td>9:00 PM</td>
-          <td>Done</td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
         </tr>
         <tr>
-          <th scope="row">2</th>
-          <td>Janaury 6, 2023</td>
-          <td>6:45 AM</td>
-          <td>9:00 PM</td>
-          <td>Ongoing</td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
         </tr>
         <tr>
-          <th scope="row">3</th>
-          <td>Janaury 9, 2023</td>
-          <td>6:45 AM</td>
-          <td>9:00 PM</td>
-          <td>Ongoing</td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
+        </tr>
+        <tr>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button class="btn-ign">Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
+        </tr>
+        <tr>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
+        </tr>
+        <tr>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
+        </tr>
+        <tr>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
+        </tr>
+        <tr>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
+        </tr>
+        <tr>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <td>
+            Mary Grace Vellina<button routerLink="/booking">Book Now</button>
+            <button>Ignore</button>
+          </td>
+          <!-- <td>Mary Grace Vellina<button>Book Now</button> <button>Ignore</button></td> -->
         </tr>
       </tbody>
+
+      <tbody></tbody>
     </table>
   </div>
 
-</div>
-
-
-<section id="contact" style="background:rgba(127, 255, 212, 0.3);padding-bottom: 30px;">
-
-  <h2 class="section-header">Do you have Concerns?</h2>
-  <p style="text-align: center;">Send us a message!</p>
-
-  <div class="d-flex align-items-start gap-3"
-    style="border: 1px solid rgba(0, 0, 0, 0.32);padding: 20px;margin: 20px 50px 20px 50px;">
-    <img
-      src="https://www.gmc-uk.org/-/media/gmc-site/ethical-guidance/learning-materials/dr-doyle-dr-foster.jpg?mw=660&hash=9DAC4DB5A8745CFE6F82588FE275B237B482B56A"
-      alt="" style="width: 400px;border-radius: 15px;">
-    <div>
-      <div class="d-flex align-items-center">
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com">
-          <label for="floatingInputDisabled">Name</label>
-        </div>&nbsp;
-
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com">
-          <label for="floatingInputDisabled">Phone</label>
-        </div>&nbsp;
-
-
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com">
-          <label for="floatingInputDisabled">Email address</label>
-        </div><br>
-
+  <div class="d-flex align-items-start gap-4 schedule_page" style="background-color: rgba(127, 255, 251, 0.653);">
+    <div class="sched">
+      <br />
+      <div
+        class="d-flex align-items-center gap-2"
+        style="margin-bottom: 15px; margin-left: 20px"
+      >
+        <img
+          src="../../assets/images/timetable.png"
+          id="sched_image"
+          alt="time"
+          srcset=""
+        />
+        <h5>Set your schedule!</h5>
       </div>
-
-
-
-      <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled"
-          style="height: 130px;resize: none;border: solid 2px #004242;"></textarea>
-        <label for="floatingTextarea2Disabled">Your text here...</label>
-
+      <br />
+      <div>
+        <div class="d-flex align-items-center gap-3" style="margin-left: 52px">
+          <div>
+            <small for="date_input">Choose your date</small><br />
+            <input type="date" class="date_input" style="width: 180px" />
+          </div>
+          <div>
+            <small for="date_input">Start time</small><br />
+            <input type="time" class="date_input" style="width: 180px" />
+          </div>
+          <div>
+            <small for="date_input">End time</small><br />
+            <input type="time" class="date_input" style="width: 180px" />
+          </div>
+        </div>
+        <div class="" style="padding-top: 20px; margin-left: 52px">
+          <small>Write notes here. (Optional)</small><br />
+          <textarea
+            class="text"
+            name=""
+            id=""
+            cols="80"
+            rows="10"
+            style="resize: none; padding: 20px; border: solid 2px #004242"
+            placeholder="Write any here..."
+          ></textarea>
+        </div>
       </div>
-      <button type="button" class="btn btn-primary ">Send Concern</button>
-      <div style="padding-top: 20px;">
-        <p style="color: rgba(0, 0, 0, 0.707);">By providing the information above, be sure you agree to our terms and
-          condition.</p>
-      </div>
-
-
-
-
+      <br />
+      <button type="button" class="btn-sched">Add Schedule</button>
+      <br /><br /><br />
     </div>
-    <div>
-      <div class="d-flex align-items-center gap-2">
-        <img src="../../assets/images/brazil-.png" alt="" style="width: 30px;">
-        <p style="font-weight: bold;">Talamban, Cebu City</p>
+    <div class="list" style="width: 540px; padding-top: 50px">
+      <div
+        class="d-flex align-items-center gap-3"
+        style="margin-bottom: 15px; width: 220px; margin-left: 100px"
+      >
+        <!-- <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset=""> -->
+        <h5>List of your schedules!</h5>
       </div>
-      <div class="d-flex align-items-center gap-2">
-        <img src="../../assets/images/communication.png" alt="" style="width: 30px;">
-        <p style="font-weight: bold;">(+63) 9319127640</p>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <img src="../../assets/images/chat.png" alt="" style="width: 30px;">
-        <p style="font-weight: bold;">techbook@gmail.com</p>
-      </div>
+      <table class="table table-striped" style="color: black;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time Started</th>
+            <th scope="col">Time Ended</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider" style="color: black;">
+          <tr>
+            <th scope="row">1</th>
+            <td>Janaury 4, 2023</td>
+            <td>6:45 AM</td>
+            <td>9:00 PM</td>
+            <td>Done</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Janaury 6, 2023</td>
+            <td>6:45 AM</td>
+            <td>9:00 PM</td>
+            <td>Ongoing</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Janaury 9, 2023</td>
+            <td>6:45 AM</td>
+            <td>9:00 PM</td>
+            <td>Ongoing</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
+  <section
+    id="contact"
+    style="background: rgba(127, 255, 212, 0.3); padding-bottom: 30px"
+  >
+    <h2 class="section-header">Do you have Concerns?</h2>
+    <p style="text-align: center">Send us a message!</p>
 
+    <div
+      class="d-flex align-items-start gap-3"
+      style="
+        border: 1px solid rgba(0, 0, 0, 0.32);
+        padding: 20px;
+        margin: 20px 50px 20px 50px;
+      "
+    >
+      <img
+        src="https://www.gmc-uk.org/-/media/gmc-site/ethical-guidance/learning-materials/dr-doyle-dr-foster.jpg?mw=660&hash=9DAC4DB5A8745CFE6F82588FE275B237B482B56A"
+        alt=""
+        style="width: 400px; border-radius: 15px"
+      />
+      <div>
+        <div class="d-flex align-items-center">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInputDisabled"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputDisabled">Name</label>
+          </div>
+          &nbsp;
 
-</section>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInputDisabled"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputDisabled">Phone</label>
+          </div>
+          &nbsp;
 
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInputDisabled"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputDisabled">Email address</label>
+          </div>
+          <br />
+        </div>
+
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2Disabled"
+            style="height: 130px; resize: none; border: solid 2px #004242"
+          ></textarea>
+          <label for="floatingTextarea2Disabled">Your text here...</label>
+        </div>
+        <button type="button" class="btn-concern" style="width: 150px">
+          Send Concern
+        </button>
+        <div style="padding-top: 20px">
+          <p style="color: rgba(0, 0, 0, 0.707)">
+            By providing the information above, be sure you agree to our terms
+            and condition.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="d-flex align-items-center gap-2">
+          <img
+            src="../../assets/images/brazil-.png"
+            alt=""
+            style="width: 30px"
+          />
+          <p style="font-weight: bold">Talamban, Cebu City</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <img
+            src="../../assets/images/communication.png"
+            alt=""
+            style="width: 30px"
+          />
+          <p style="font-weight: bold">(+63) 9319127640</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <img src="../../assets/images/chat.png" alt="" style="width: 30px" />
+          <p style="font-weight: bold">techbook@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</body>

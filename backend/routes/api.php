@@ -26,6 +26,7 @@ Route::post('/login/technician', [AuthController::class, "loginTechnicianAcc"]);
 Route::post('/login/customer', [AuthController::class, "loginCustomerAcc"]);
 
 Route::get("customer", [CustomerAccountController::class, 'index']);
+Route::get("technician", [TechnicianAccountController::class, 'index']);
 
 Route::middleware('auth:sanctum')->group(function () {
 
@@ -33,6 +34,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::patch("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::delete("customer/{id}", [CustomerAccountController::class, 'destroy']);
+
+    Route::get("technician/{id}", [TechnicianAccountController::class, 'show']);
+    Route::put("technician/{id}", [TechnicianAccountController::class, 'update']);
+    Route::patch("technician/{id}", [TechnicianAccountController::class, 'update']);
+    Route::delete("technician/{id}", [TechnicianAccountController::class, 'destroy']);
 
     Route::get("schedule/{id}", [TechnicianScheduleController::class, 'show']);
     Route::post("schedule", [TechnicianScheduleController::class, 'store']);

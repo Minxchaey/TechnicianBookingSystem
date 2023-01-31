@@ -13,6 +13,9 @@ export class ArticleService {
   listCustomers(){
     return this.http.get<any>(this.url+ `/api/customer`);
   }
+  listTechnicians(){
+    return this.http.get<any>(this.url+ `/api/technician`);
+  }
 
   httpOptions = {
     headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' ,   'Authorization': `Bearer ${localStorage.getItem('token')}`})
@@ -38,6 +41,10 @@ export class ArticleService {
   deleteCustomer(id : any): Observable<any>{
     return this.http.delete<any>(this.url+ `/api/customer/`+ id, this.httpOptions);
   }
+  deleteTechnicians(id : any): Observable<any>{
+    return this.http.delete<any>(this.url+ `/api/technician/`+ id, this.httpOptions);
+  }
+
 
   login1(credentials:any): Observable<any>{
     return this.http.post(this.url+ `/api/login/customer`,credentials);

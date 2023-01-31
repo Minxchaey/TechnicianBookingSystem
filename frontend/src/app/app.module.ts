@@ -37,6 +37,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReqTechnicianComponent } from './req-technician/req-technician.component';
 import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
 import { DataTablesModule } from 'angular-datatables';
+import { NavCustomerComponent } from './nav-customer/nav-customer.component';
+import { ReqCustomerComponent } from './req-customer/req-customer.component';
+import { BookingComponent } from './booking/booking.component';
+import { SettingsCustomerComponent } from './settings-customer/settings-customer.component';
+import { TransactionsCustomerComponent } from './transactions-customer/transactions-customer.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,12 @@ import { DataTablesModule } from 'angular-datatables';
     SettingsTechnicianComponent,
     ReqTechnicianComponent,
     TransactionsTechnicianComponent,
+    NavCustomerComponent,
+    ReqCustomerComponent,
+    BookingComponent,
+    SettingsCustomerComponent,
+    TransactionsCustomerComponent,
+
   ],
   imports: [
     BrowserModule,
